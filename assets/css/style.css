@@ -1057,7 +1057,7 @@ margin-top: 20px;
 .contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #ed3c0d;
+  background: #b20515;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1066,7 +1066,7 @@ margin-top: 20px;
 .contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #18d26e;
+  background: #1c4b32;
   text-align: center;
   padding: 15px;
   font-weight: 600;

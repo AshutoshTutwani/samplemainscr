@@ -305,7 +305,7 @@
   
           <div class="col-lg-8 mt-5 mt-lg-0">
   
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="php-email-form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -317,20 +317,20 @@
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="phone" id="subject" placeholder="Your Phone Number" data-rule="minlen:4" data-msg="Please enter your phone number" />
+                <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone Number" data-rule="minlen:4" data-msg="Please enter your phone number" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="8" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" rows="8" id="comment" placeholder="Message"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
                 <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="error-message" id="error"></div>
+                <div class="sent-message" id="sent"></div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+              <div class="text-center"><button onclick="SendInfo()" class="commonBtn">Send Message</button></div>
+            </div>
   
           </div>
   

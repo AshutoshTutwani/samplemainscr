@@ -221,9 +221,72 @@
       once: true
     });
   }
-  $(window).on('load', function() {
-    console.log("1oad")
+  $(window).on('load', function() {  
     aos_init();
   });
 
 })(jQuery);
+
+function SendInfo() {  
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  //var comments = document.getElementById("comments").value;
+  var email = document.getElementById("email").value;
+  var comment = document.getElementById("comment").value;
+
+  var errormsg = document.getElementById("error");
+  var sentmsg = document.getElementById("sent");
+  console.log(name + " 1" + email);
+  var currentDateAndTime=new Date().toLocaleString();    
+  if (validation()) // Calling validation function
+  {
+      var xhr = new XMLHttpRequest();
+      var url = "https://us-central1-themagicalmomentzz.cloudfunctions.net/postContact";
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+              if (xhr.status === 200) {                
+                  sentmsg.innerHTML  = "Thanks for contacting us! Our team will shortly contact you."
+                  sentmsg.style.display = "block"              }
+              else {
+                errormsg.style.display = "block"
+                errormsg.innerHTML  = "Could not send the message! Please contact us directly on the given phone number."
+              }
+          }
+      };
+      var data = JSON.stringify({ "email": email, "name": name, "phone": phone,"comment":comment, "date" : currentDateAndTime});
+      console.log(data);
+      xhr.send(data);
+  }
+  console.log("done");
+};
+
+function validation() {
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+  var emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  console.log(name + " 2" + email);
+  var isEmail = emailReg.test(String(email).toLowerCase());
+  console.log("isemail" + isEmail);
+  if (name === '') {
+      alert("Please enter your name...!!!");
+      return false;
+  }
+  else if (phone === '' && email === '') {
+      alert("Please enter either Phone number or Email ID...!!!");
+      return false;
+  }
+  else if (phone === '' && !isEmail) {
+      alert("Invalid Email. Please try again with correct email ID, or directly contact us on the above mentioned details.");
+      return false;
+  }
+  else if (email !== '' && !isEmail) {
+      alert("Invalid Email. Please try again with correct email ID, or directly contact us on the above mentioned details.");
+      return false;
+  }
+  else {
+      return true;
+  }
+}
