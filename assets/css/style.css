@@ -189,6 +189,15 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
 }
+@media (max-width: 490px){
+  #header .logo {font-size: 24px;}
+}
+@media (max-width: 390px){
+  #header .logo {font-size: 21px;}
+}
+@media (max-width: 350px){
+  #header .logo {font-size: 16px;}
+}
 
 #header .logo a {
   color: #fff;
