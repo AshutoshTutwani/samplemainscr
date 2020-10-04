@@ -629,7 +629,6 @@ section {
   font-size: 14px;
   font-weight: 500;
   padding: 0;
-  line-height: 1px;
   margin: 0 0 5px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1021,17 +1020,30 @@ margin-top: 20px;
 
 .contact .info h4 {
   padding: 0 0 0 60px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
+  color: #cda45e;
   margin-bottom: 5px;
   font-family: "Poppins", sans-serif;
 }
 
-.contact .info p {
-  padding: 0 0 0 60px;
+.contact .info a {
+  padding: 0 0 0 20px;
   margin-bottom: 0;
-  font-size: 14px;
-  color: #bab3a6;
+  font-size: 20px;
+  color: #fff;
+}
+
+@media (max-width: 450px){
+  .contact .info a { 
+    font-size: 17px; 
+  }
+}
+
+@media (max-width: 399px){
+  .contact .info a { 
+    font-size: 14px; 
+  }
 }
 
 .contact .info .open-hours, .contact .info .email, .contact .info .phone {
@@ -1189,17 +1201,22 @@ margin-top: 20px;
   margin: 0 0 20px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
+  color: #cda45e;
   font-weight: 300;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
 }
 
 #footer .footer-top .footer-info p {
-  font-size: 14px;
+  font-size: 20px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Playfair Display", serif;
-  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #cda45e;;
+}
+
+#footer .footer-top .footer-info p a{
+  color: #fff;  
 }
 
 #footer .footer-top .social-links a {
