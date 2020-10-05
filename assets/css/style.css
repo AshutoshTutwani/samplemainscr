@@ -497,7 +497,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -532,6 +532,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #eee;
   margin-bottom: 10px 0 0 0;
   font-size: 22px;
+  font-weight: bolder;
 }
 
 #hero .btns {
@@ -541,11 +542,11 @@ h1, h2, h3, h4, h5, h6 {
 #hero .btn-menu, #hero .btn-book {
   font-weight: 600;
   font-size: 13px;
-  letter-spacing: 0.5px;
-  width: 180px;
+  letter-spacing: 0.5px; 
   text-align: center;
   text-transform: uppercase;
   display: inline-block;
+  margin-top: 10px;
   padding: 12px 30px;
   border-radius: 50px;
   transition: 0.3s;
@@ -590,7 +591,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 36px;
   }
   #hero h2 {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 24px;
   }
 }
